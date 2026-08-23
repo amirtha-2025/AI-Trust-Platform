@@ -259,6 +259,46 @@ The stored data is then retrieved to power governance metrics, recent security a
 
 ---
 
+## 📸 Platform in Action
+
+The following screenshots demonstrate the AI Trust Platform's core security, auditing, red-team testing, governance, and Exasol integration capabilities.
+
+### 🛡️ AI Agent Firewall
+
+The AI Agent Firewall analyzes incoming prompts, detects potential security threats, assigns a risk score, and classifies requests as **SAFE, SUSPICIOUS, or BLOCKED**.
+
+![AI Agent Firewall](screenshots/AI%20Agent%20Firewall.png)
+
+### 🔍 Decision Auditor
+
+The Decision Auditor records AI security decisions and associated risk information, creating an auditable trail for governance and traceability.
+
+![Decision Auditor](screenshots/Decision%20Auditor.png)
+
+### 🔴 Continuous Red Team
+
+The Continuous Red Team module evaluates the firewall against adversarial and normal prompts to validate the effectiveness of the platform's security guardrails.
+
+![Continuous Red Team](screenshots/Continuous%20Red%20Team.png)
+
+### 📊 Governance Dashboard
+
+The Governance Dashboard provides centralized visibility into security events, risk classifications, firewall activity, and Red Team performance.
+
+![Governance Dashboard](screenshots/Governance%20Dashboard.png)
+
+The dashboard also provides recent security activity, governance insights, and monitoring information derived from stored security events.
+
+![Governance Dashboard - Security Activity](screenshots/Governance%20Dashboard%201.png)
+
+### ⚡ Exasol Personal on Azure
+
+Exasol Personal serves as the platform's primary data platform. Firewall, audit, and red-team events are centrally stored in the `AI_TRUST.AI_SECURITY_EVENTS` table for monitoring and analysis.
+
+![Exasol Personal Event Storage](screenshots/Exasol.png)
+
+---
+
 ## 🗄️ Database Schema
 
 The project uses the **`AI_TRUST`** schema and the **`AI_SECURITY_EVENTS`** table in Exasol Personal.
