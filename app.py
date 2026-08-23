@@ -531,9 +531,13 @@ elif page == "🏠 Governance Overview":
     ]
 
     red_team_passed = sum(
-        1 for event in red_team_events
-        if event.get("result") == "PASSED"
+    1 for event in red_team_events
+    if (
+        event.get("red_team_result") == "PASSED"
+        or event.get("ai_decision") == "PASSED"
+        or event.get("result") == "PASSED"
     )
+)
 
     if len(red_team_events) > 0:
 
@@ -821,7 +825,7 @@ elif page == "🏠 Governance Overview":
         )
 
         st.dataframe(
-            events_df.tail(10),
+            events_df.head(10),
             use_container_width=True,
             hide_index=True
         )
@@ -1046,18 +1050,34 @@ elif page == "🏠 Governance Overview":
 
     st.subheader("🏗️ AI Trust & Safety Architecture")
 
-    st.code("""
+    st.code(
+"""
 AI AGENT / USER REQUEST
           │
           ▼
-   🛡️ AI AGENT FIREWALL
+🛡️ AI AGENT FIREWALL
+   Threat Detection & Risk Scoring
           │
           ▼
-   🔍 DECISION AUDITOR
+🔍 DECISION AUDITOR
+   Decision & Security Audit
           │
           ▼
-   ⚔️ CONTINUOUS RED TEAM
+🗄️ EXASOL PERSONAL ON AZURE
+   Centralized Security Event Storage
           │
           ▼
 📊 GOVERNANCE COMMAND CENTER
-""")
+   Monitoring & Governance Analytics
+
+
+🧪 CONTINUOUS RED TEAM
+          │
+          │  Adversarial Test Prompts
+          ▼
+🛡️ AI AGENT FIREWALL
+          │
+          └──── Test Results ────► 🗄️ EXASOL PERSONAL
+""",
+    language=None
+)
