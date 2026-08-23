@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+
+.env
+secrets.json
+*.pem
+.streamlit/secrets.toml
+
+events.jsonl
+malaysia-skus.json
+
+.vscode/
+.DS_Store
+Thumbs.db
